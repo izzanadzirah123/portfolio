@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUR IZZA NADZIRAH | Cyber Security Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            base: '#0B0F19',
+                            card: '#111827',
+                            cardBorder: '#1F293D',
+                            accent: '#00E5FF',     /* Electric Cyan */
+                            secondary: '#00FF9D',  /* Neon Emerald */
+                            slate: '#1E293B',
+                            textMuted: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Glowing & Hover Utilities */
+        .glow-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 10px 30px -5px rgba(0, 229, 255, 0.3);
+            border-color: rgba(0, 229, 255, 0.6);
+            transform: translateY(-4px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #00E5FF 0%, #00FF9D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-cyber-base text-gray-100 font-sans antialiased selection:bg-cyber-accent selection:text-black relative overflow-x-hidden">
+
+    <!-- Interactive Canvas Particle Background -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-40"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-cyber-base/80 backdrop-blur-md border-b border-cyber-cardBorder">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-mono font-bold text-cyber-accent tracking-wider hover:opacity-80 transition">
+                &lt;IzzaNadzirah/&gt;
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-cyber-accent transition">About</a>
+                <a href="#skills" class="hover:text-cyber-accent transition">Skills</a>
+                <a href="#experience" class="hover:text-cyber-accent transition">Experience</a>
+                <a href="#projects" class="hover:text-cyber-accent transition">Projects</a>
+                <a href="#certifications" class="hover:text-cyber-accent transition">Certifications</a>
+                <a href="#contact" class="hover:text-cyber-accent transition">Contact</a>
+            </div>
+
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="mailto:izzanadzirah.work@gmail.com" class="border border-cyber-accent text-cyber-accent hover:bg-cyber-accent hover:text-black font-semibold px-5 py-2 rounded-lg text-sm transition-all duration-300 shadow-md hover:shadow-cyber-accent/30">
+                    <i class="fas fa-paper-plane mr-2"></i>Hire Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-cyber-accent text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cyber-card border-b border-cyber-cardBorder px-6 py-6 space-y-4 text-center">
+            <a href="#skills" class="block text-gray-300 hover:text-cyber-accent py-2">Skills</a>
+            <a href="#experience" class="block text-gray-300 hover:text-cyber-accent py-2">Experience</a>
+            <a href="#projects" class="block text-gray-300 hover:text-cyber-accent py-2">Projects</a>
+            <a href="#certifications" class="block text-gray-300 hover:text-cyber-accent py-2">Certifications</a>
+            <a href="#contact" class="block text-gray-300 hover:text-cyber-accent py-2">Contact</a>
+            <a href="mailto:izzanadzirah.work@gmail.com" class="inline-block border border-cyber-accent text-cyber-accent px-6 py-2 rounded-lg text-sm font-bold w-full mt-2">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-28 pb-16 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Left Text Column -->
+            <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center space-x-3 bg-cyber-slate/60 border border-cyber-accent/30 text-cyber-accent text-xs font-mono px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-secondary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyber-secondary"></span>
+                    </span>
+                    <span>Available for full-time roles starting Jan 2027</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                    Hi, I'm <span class="text-gradient">Nur Izza Nadzirah</span>
+                </h1>
+                
+                <h2 class="text-xl sm:text-2xl text-cyber-accent font-mono mt-3 font-semibold tracking-wide">
+                    Cyber Security Specialist & Network Engineer
+                </h2>
+
+                <p class="mt-6 text-gray-300 leading-relaxed text-base sm:text-lg max-w-2xl">
+                    Passionate about securing enterprise infrastructure, Identity & Access Governance (IAM), threat detection, digital forensics, and engineering resilient web applications with end-to-end encryption.
+                </p>
+
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-gradient-to-r from-cyber-accent to-cyber-secondary text-black font-bold px-7 py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fas fa-shield-alt mr-2"></i>View Projects
+                    </a>
+                    <a href="https://github.com/izzanadzirah123" target="_blank" rel="noopener noreferrer" class="border border-cyber-cardBorder bg-cyber-card/80 backdrop-blur-sm text-gray-200 font-semibold px-6 py-3.5 rounded-lg hover:border-cyber-accent transition-all duration-300 flex items-center space-x-2">
+                        <i class="fab fa-github text-lg"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+
+                <div class="mt-10 flex flex-wrap items-center gap-6 text-gray-400 font-mono text-sm">
+                    <a href="https://linkedin.com/in/izzanadzirah/" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-accent transition transform hover:scale-110 flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-lg text-cyber-accent"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/izzanadzirah123" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-accent transition transform hover:scale-110 flex items-center space-x-2">
+                        <i class="fab fa-github text-lg text-cyber-accent"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:izzanadzirah.work@gmail.com" class="hover:text-cyber-accent transition transform hover:scale-110 flex items-center space-x-2">
+                        <i class="fas fa-envelope text-lg text-cyber-accent"></i>
+                        <span>Email</span>
+                    </a>
+                    <span class="text-gray-500"><i class="fas fa-location-dot text-cyber-accent mr-1"></i> Melaka, Malaysia</span>
+                </div>
+            </div>
+
+            <!-- Hero Right Column: Interactive Terminal Widget -->
+            <div class="lg:col-span-5" data-aos="fade-left" data-aos-duration="1000">
+                <div class="bg-cyber-card/90 backdrop-blur-md border border-cyber-cardBorder rounded-xl p-6 font-mono text-xs sm:text-sm shadow-2xl glow-hover">
+                    <div class="flex items-center justify-between border-b border-cyber-cardBorder pb-3 mb-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 bg-red-500/80 rounded-full inline-block"></span>
+                            <span class="w-3 h-3 bg-yellow-500/80 rounded-full inline-block"></span>
+                            <span class="w-3 h-3 bg-green-500/80 rounded-full inline-block"></span>
+                            <span class="text-xs text-cyber-textMuted ml-2">izzanadzirah@sec-ops:~</span>
+                        </div>
+                        <span class="text-[10px] text-cyber-accent bg-cyber-accent/10 px-2 py-0.5 rounded">bash v5.2</span>
+                    </div>
+                    
+                    <div id="terminal-content" class="space-y-3 text-gray-300">
+                        <p class="text-cyber-accent">$ whoami</p>
+                        <p class="text-gray-300 pl-3">Nur Izza Nadzirah binti Md Zain</p>
+                        <p class="text-cyber-accent">$ cat core_competencies.txt</p>
+                        <ul class="list-disc list-inside text-gray-400 pl-3 space-y-1">
+                            <li>Security Operations & SIEM Audit</li>
+                            <li>IAM, RBAC & Multi-Factor Auth</li>
+                            <li>Network Routing & Switching (CCNA)</li>
+                            <li>Digital Forensics & File Recovery</li>
+                        </ul>
+                        <p class="text-cyber-accent">$ status</p>
+                        <p class="text-cyber-secondary pl-3">✓ Systems Active & Ready for Enterprise Deployment</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 px-6 border-t border-cyber-cardBorder/60 bg-cyber-base/40 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-2 font-mono">
+                    <span class="text-cyber-accent">01.</span> Technical Competencies
+                </h2>
+                <p class="text-cyber-textMuted mb-12">Core technologies, protocols, and security disciplines I specialize in.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-cyber-card p-6 rounded-xl border border-cyber-cardBorder glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl mb-4">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Security Operations</h3>
+                    <p class="text-sm text-cyber-textMuted leading-relaxed">
+                        SIEM Log Analysis, Audit Trail Verification, Incident Handling, Vulnerability Assessments, SQLi & XSS Mitigation.
+                    </p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-cyber-card p-6 rounded-xl border border-cyber-cardBorder glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl mb-4">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Identity & Access (IAM)</h3>
+                    <p class="text-sm text-cyber-textMuted leading-relaxed">
+                        Role-Based Access Control (RBAC), Multi-Factor Auth (TOTP/MFA), Least Privilege Architecture, Anti-Phishing Keywords.
+                    </p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-cyber-card p-6 rounded-xl border border-cyber-cardBorder glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl mb-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Network Infrastructure</h3>
+                    <p class="text-sm text-cyber-textMuted leading-relaxed">
+                        TCP/IP, OSI Layers, VLAN Architecture, Layer 3 Routing & Switching, Packet Analysis with Wireshark.
+                    </p>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-cyber-card p-6 rounded-xl border border-cyber-cardBorder glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl mb-4">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Forensics & Security Tools</h3>
+                    <p class="text-sm text-cyber-textMuted leading-relaxed">
+                        Kali Linux, Command-Line Recovery, OWASP ZAP, Cisco Packet Tracer, VS Code, Git/GitHub, XAMPP.
+                    </p>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-cyber-card p-6 rounded-xl border border-cyber-cardBorder glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Development & Scripting</h3>
+                    <p class="text-sm text-cyber-textMuted leading-relaxed">
+                        Python (Flask), PHP (Laravel), SQL, MySQL, HTML5, CSS3, JavaScript.
+                    </p>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-cyber-card p-6 rounded-xl border border-cyber-cardBorder glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl mb-4">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Cryptography</h3>
+                    <p class="text-sm text-cyber-textMuted leading-relaxed">
+                        End-to-End AES Encryption, Symmetric Ciphers, Caesar Cipher, Hash Verification & Data Integrity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 border-t border-cyber-cardBorder/60 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-2 font-mono">
+                    <span class="text-cyber-accent">02.</span> Professional Experience
+                </h2>
+                <p class="text-cyber-textMuted mb-12">Hands-on background in IT operations, cyber security, and government systems.</p>
+            </div>
+
+            <div class="border-l-2 border-cyber-accent/40 pl-6 md:pl-10 space-y-12 max-w-4xl">
+                
+                <!-- Role 1 -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-cyber-accent border-4 border-cyber-base animate-pulse"></div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">IT Cybersecurity Intern</h3>
+                        <span class="text-sm font-mono text-cyber-accent bg-cyber-accent/10 border border-cyber-accent/30 px-3 py-1 rounded-full w-fit mt-1 md:mt-0">July 2026 – Present</span>
+                    </div>
+                    <h4 class="text-md text-gray-400 font-medium mt-1">Akademi Kastam Diraja Malaysia (AKMAL) | Melaka, Malaysia</h4>
+                    
+                    <ul class="mt-4 text-gray-300 space-y-2.5 text-sm list-disc list-inside leading-relaxed">
+                        <li>Configured Layer 3 network infrastructure and conducted diagnostic tests to resolve connectivity degradation across departmental systems.</li>
+                        <li>Executed command-line file recovery on corrupted drives using Kali Linux within a strict digital forensics framework.</li>
+                        <li>Authored official government memos, user manuals, and technical workflow flowcharts for key systems including SMART3P.</li>
+                        <li>Administered user access controls and permissions in strict alignment with access governance protocols and least privilege principles.</li>
+                        <li>Performed routine system integrity checks, log verification, and managed AV/IT infrastructure for high-level international delegation visits.</li>
+                    </ul>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-cyber-cardBorder border-4 border-cyber-base"></div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Project Coordinator & Facilitator</h3>
+                        <span class="text-sm font-mono text-cyber-textMuted">Aug 2025</span>
+                    </div>
+                    <h4 class="text-md text-gray-400 font-medium mt-1">CyberQuest CSR & Educational Program (SULAM)</h4>
+                    
+                    <ul class="mt-4 text-gray-300 space-y-2.5 text-sm list-disc list-inside leading-relaxed">
+                        <li>Designed and facilitated technical workshops explaining cryptography fundamentals (Caesar Cipher) and personal cyber safety awareness.</li>
+                        <li>Authored formal project proposals and conducted stakeholder outreach to secure sponsorship and operational resources.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Featured Projects -->
+    <section id="projects" class="py-20 px-6 border-t border-cyber-cardBorder/60 bg-cyber-base/40 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-2 font-mono">
+                    <span class="text-cyber-accent">03.</span> Featured Security Projects
+                </h2>
+                <p class="text-cyber-textMuted mb-12">Security engineering, identity systems, and encrypted storage platforms.</p>
+            </div>
+
+            <div data-aos="zoom-in-up" class="bg-cyber-card border border-cyber-cardBorder rounded-2xl p-8 glow-hover shadow-2xl">
+                <div class="flex flex-col lg:flex-row justify-between lg:items-center mb-6 border-b border-cyber-cardBorder pb-6">
+                    <div>
+                        <span class="text-xs font-mono text-cyber-accent uppercase tracking-widest bg-cyber-accent/10 border border-cyber-accent/30 px-3 py-1 rounded-full">Final Year Project</span>
+                        <h3 class="text-2xl font-bold text-white mt-3">Secure Document Repository System</h3>
+                        <p class="text-sm text-cyber-textMuted font-mono mt-1">Role: Web Security & Identity Management Lead (Dec 2025 – Apr 2026)</p>
+                    </div>
+                    
+                    <div class="mt-4 lg:mt-0 flex flex-wrap gap-2">
+                        <span class="bg-cyber-base border border-cyber-cardBorder text-xs px-3 py-1.5 rounded-lg text-gray-300 font-mono">Python / Flask</span>
+                        <span class="bg-cyber-base border border-cyber-cardBorder text-xs px-3 py-1.5 rounded-lg text-gray-300 font-mono">PHP</span>
+                        <span class="bg-cyber-base border border-cyber-cardBorder text-xs px-3 py-1.5 rounded-lg text-gray-300 font-mono">MySQL</span>
+                        <span class="bg-cyber-base border border-cyber-cardBorder text-xs px-3 py-1.5 rounded-lg text-gray-300 font-mono">AES Encryption</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-300">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-lock text-cyber-accent mt-1 text-base"></i>
+                            <div>
+                                <strong class="text-white block font-semibold mb-0.5">Multi-Factor Authentication:</strong>
+                                Engineered MFA using TOTP and custom Personal Security Keywords to eliminate credential harvesting and phishing attacks.
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-user-shield text-cyber-accent mt-1 text-base"></i>
+                            <div>
+                                <strong class="text-white block font-semibold mb-0.5">Granular Role-Based Access Control (RBAC):</strong>
+                                Implemented strict tiered permission levels (Admin, Trainer, Staff) enforcing principle of least privilege.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-file-shield text-cyber-accent mt-1 text-base"></i>
+                            <div>
+                                <strong class="text-white block font-semibold mb-0.5">Cryptographic Protection & Auditing:</strong>
+                                Deployed End-to-End AES encryption for confidential document storage and validated inputs against SQL Injection and XSS attacks.
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-list-check text-cyber-accent mt-1 text-base"></i>
+                            <div>
+                                <strong class="text-white block font-semibold mb-0.5">Real-Time Audit Trail Logging:</strong>
+                                Built an automated log capture module recording user actions, timestamps, and IP addresses for forensic traceability.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="certifications" class="py-20 px-6 border-t border-cyber-cardBorder/60 relative z-10">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+            
+            <!-- Education Column -->
+            <div data-aos="fade-right">
+                <h2 class="text-2xl font-bold text-white mb-6 font-mono">
+                    <span class="text-cyber-accent">04.</span> Academic Qualifications
+                </h2>
+                <div class="space-y-6">
+                    <div class="bg-cyber-card border border-cyber-cardBorder p-6 rounded-xl glow-hover">
+                        <h3 class="text-lg font-bold text-white">Bachelor of IT (Hons) in Cyber Security</h3>
+                        <p class="text-sm text-cyber-accent font-mono mt-1">Universiti Poly-Tech Malaysia (UPTM)</p>
+                        <p class="text-xs text-cyber-textMuted mt-2"><i class="fas fa-calendar-alt mr-1"></i> Jan 2024 – 2027 (Expected) | Kuala Lumpur, Malaysia</p>
+                    </div>
+
+                    <div class="bg-cyber-card border border-cyber-cardBorder p-6 rounded-xl glow-hover">
+                        <h3 class="text-lg font-bold text-white">Matriculation Programme (Physical Sciences)</h3>
+                        <p class="text-sm text-cyber-accent font-mono mt-1">Kolej Matrikulasi Melaka</p>
+                        <p class="text-xs text-cyber-textMuted mt-2"><i class="fas fa-calendar-alt mr-1"></i> July 2021 – July 2023 | MUET: Band 3.5</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Column -->
+            <div data-aos="fade-left">
+                <h2 class="text-2xl font-bold text-white mb-6 font-mono">
+                    <span class="text-cyber-accent">05.</span> Certifications
+                </h2>
+                <div class="space-y-4">
+                    <div class="bg-cyber-card border border-cyber-cardBorder p-4 rounded-xl flex items-center space-x-4 glow-hover">
+                        <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl flex-shrink-0">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">CCNAv7: Switching, Routing, and Wireless Essentials</h4>
+                            <p class="text-xs text-cyber-textMuted mt-0.5">Cisco Networking Academy</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-cyber-card border border-cyber-cardBorder p-4 rounded-xl flex items-center space-x-4 glow-hover">
+                        <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl flex-shrink-0">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">CCNAv7: Introduction to Networks</h4>
+                            <p class="text-xs text-cyber-textMuted mt-0.5">Cisco Networking Academy</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-cyber-card border border-cyber-cardBorder p-4 rounded-xl flex items-center space-x-4 glow-hover">
+                        <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl flex-shrink-0">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Foundations of Cybersecurity</h4>
+                            <p class="text-xs text-cyber-textMuted mt-0.5">Google / Coursera</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-cyber-card border border-cyber-cardBorder p-4 rounded-xl flex items-center space-x-4 glow-hover">
+                        <div class="w-12 h-12 rounded-lg bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent text-xl flex-shrink-0">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Crash Course on Python</h4>
+                            <p class="text-xs text-cyber-textMuted mt-0.5">Google / Coursera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 border-t border-cyber-cardBorder/60 bg-cyber-base/40 relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-3xl font-bold text-white mb-2 font-mono">
+                <span class="text-cyber-accent">06.</span> Get In Touch
+            </h2>
+            <p class="text-cyber-textMuted mb-8 max-w-xl mx-auto">
+                Seeking entry-level Cyber Security & Infrastructure opportunities starting January 2027. Feel free to reach out for positions or technical collaborations.
+            </p>
+
+            <div class="bg-cyber-card border border-cyber-cardBorder p-8 rounded-2xl max-w-lg mx-auto text-left glow-hover shadow-2xl">
+                <div class="space-y-4 font-mono text-sm">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-envelope text-cyber-accent text-lg w-6"></i>
+                        <a href="mailto:izzanadzirah.work@gmail.com" class="text-gray-200 hover:text-cyber-accent transition">izzanadzirah.work@gmail.com</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-phone text-cyber-accent text-lg w-6"></i>
+                        <span class="text-gray-200">+60 18-7706912</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fab fa-linkedin text-cyber-accent text-lg w-6"></i>
+                        <a href="https://linkedin.com/in/izzanadzirah/" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-cyber-accent transition">linkedin.com/in/izzanadzirah</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fab fa-github text-cyber-accent text-lg w-6"></i>
+                        <a href="https://github.com/izzanadzirah123" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-cyber-accent transition">github.com/izzanadzirah123</a>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="mailto:izzanadzirah.work@gmail.com" class="block w-full text-center bg-gradient-to-r from-cyber-accent to-cyber-secondary text-black font-bold px-6 py-3.5 rounded-lg hover:brightness-110 transition duration-300">
+                        Send Direct Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-cyber-cardBorder text-center font-mono text-xs text-cyber-textMuted relative z-10">
+        <p>© 2026 NUR IZZA NADZIRAH BINTI MD ZAIN. Designed for Enterprise Cyber Security.</p>
+    </footer>
+
+    <!-- AOS JS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Interactive Canvas Particle Network Background
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        const particleCount = Math.min(Math.floor(window.innerWidth / 20), 60);
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: Math.random() * 1.5 + 1
+            });
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#00E5FF';
+                ctx.fill();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 229, 255, ${1 - dist / 120})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+    </script>
+</body>
+</html>
